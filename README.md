@@ -23,7 +23,7 @@ Every lesson folder has the same four files:
 
 ## Running a lesson
 
-From inside a lesson folder:
+**macOS / Linux:** from inside a lesson folder:
 
 ```
 ./run.sh
@@ -36,11 +36,26 @@ chmod +x run.sh
 ./run.sh
 ```
 
-or just compile and run directly:
+**Windows:** from inside a lesson folder, in Command Prompt or PowerShell:
+
+```
+run.bat
+```
+
+This needs a `g++` compiler on your `PATH`. The easiest way to get one is
+[MSYS2](https://www.msys2.org/) (install it, then run
+`pacman -S mingw-w64-ucrt-x86_64-gcc` in the MSYS2 terminal and add its
+`bin` folder to your `PATH`), or the C++ build tools bundled with
+[MinGW-w64](https://www.mingw-w64.org/). If you'd rather use `run.sh`
+directly, install [Git Bash](https://git-scm.com/downloads) (bundled with
+Git for Windows) or [WSL](https://learn.microsoft.com/windows/wsl/install)
+and run it from there instead.
+
+**Any platform**, compiling and running directly also works:
 
 ```
 g++ -std=c++17 -Wall -Wextra -o test_lessonN test.cpp
-./test_lessonN
+./test_lessonN        (or test_lessonN.exe on Windows)
 ```
 
 You'll see a `[PASS]` or `[FAIL]` line for every check. Keep editing
